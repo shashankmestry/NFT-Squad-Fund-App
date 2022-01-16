@@ -132,8 +132,8 @@ class StartSquad extends Component {
         if(this.props.metamask.address === "") {
             data.message = "Please connect MetaMask"
             error = true;
-        } else if(this.props.metamask.network !== 'Ropsten') {
-            data.message = "Please switch to Ropsten Network"
+        } else if(this.props.metamask.network !== 'Rinkeby') {
+            data.message = "Please switch to Rinkeby Network"
             error = true;
         }
         if(error) {
