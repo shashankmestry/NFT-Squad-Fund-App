@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2E2E3A;
+  background-color: transparent;
+  background-image: linear-gradient(
+136deg
+, #2E0916 0%, #4f395a 100%);
+  background-attachment: fixed
+}
+.navbar-light .navbar-brand {
+  color: #DE0F62;
+  font-weight: 500;
+
+}
+.navbar-brand img {
+  width: 45px;
+  margin-right: 10px;
+}
+#main-menu a {
+  font-weight: bold;
+  color: #000;
+}
+#main-menu a.active, #main-menu a:hover {
+  color: #DE0F62;
+}
+#nav-wallet .badge {
+  color: #000;
+  font-weight: normal;
+  font-size: 1rem;
+}
+#nav-wallet .network {
+  border: 1px solid #000;
+  margin-right: 15px;
+}
+#nav-wallet .network::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #000;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+#nav-wallet .Mainnet.network::before {
+  background-color: #29b6af;
+}
+#nav-wallet .Ropsten.network::before {
+  background-color: #ff4a8d;
+}
+#nav-wallet .Rinkeby.network::before {
+  background-color: #f6c343;
+}
+#nav-wallet .Goerli.network::before {
+  background-color: #3099f2;
+}
+#nav-wallet .Kovan.network::before {
+  background-color: #9064ff;
+}
+.rounded {
+  border-radius: 0.5rem!important;
+}
+.compact {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.form-label {
+  font-weight: bold;
+}
+.form-control {
+  background-color: #F2F3F7;
+  border-color: #F2F3F7;
+  border-radius: 0.5rem;
+}
+.input-group-text {
+  border: none;
+}
+.text-primary {
+  color: #DE0F62 !important;
+}
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #DE0F62;
+  border-color: #DE0F62;
+}
+.btn-primary:hover, .btn-primary:active {
+  color: #fff;
+  background-color: #b41e5a;
+  border-color: #b41e5a;
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus, .btn-primary:active:focus {
+  color: #fff;
+  background-color: #b41e5a;
+  border-color: #b41e5a;
+  box-shadow: 0 0 0 0.25rem rgb(180 30 90 / 50%);
+}
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #b41e5a;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(180 30 90 / 25%);
+}
+.start-spad-actions {
+  margin: 40px auto 0;
+  max-width: 400px;
+}
+
+/* START SWITCH CSS */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.form-control.inline {
+    display: inline-block;
+    width: 250px;
+}
+/* END SWITCH CSS */
+
+.toast-container {
+  position: fixed !important;
+}
+.buy-token-input-text {
+  width: 100px;
+  text-align: center;
+}
+
+.bg-orange {
+  --bs-bg-opacity: 1;
+  background-color: #ff743e !important;
+}
+
+@media (max-width: 576px) {
+  #main-menu {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #main-menu a.nav-link {
+    display: inline-block;
+    padding: 5px;
+  }
+}

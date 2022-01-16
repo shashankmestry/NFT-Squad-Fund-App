@@ -1,0 +1,73 @@
+.spad-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    border: 1px solid;
+    padding: 4px 10px;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+}
+.spad-status.live {
+    border-color: #1CD223;
+    color: #1CD223;
+}
+.spad-status.closed {
+    border-color: #F40732;
+    color: #F40732;
+}
+.spad-status.acquired {
+    border-color: #666;
+    color: #666;
+}
+.spad-status.pending {
+    border-color: rgb(255, 200, 83);
+    color: rgb(255, 200, 83);
+}
+.spad-label {
+    font-weight: 700;
+    font-size: 14px;
+}
+.spad-symbol {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #979797;
+}
+.spad-progress-text {
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+.spad-range-text {
+    font-size: 20px;
+    color: #339CFE;
+}
+.spad-range-label {
+    font-size: 14px;
+    color: #979797;
+}
+.spad-holder-text {
+    font-size: 20px;
+    line-height: 50px;
+}
+.spad-twitter {
+    margin-top: 10px;
+    border: 1px solid #e5e8eb;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+.spad-twitter:hover {
+    box-shadow: 0px 0px 10px 1px #04111d40;
+}
+.spad-twitter>svg {
+    color: #2081e2;
+    margin-right: 5px;
+}
+.spad-twitter>span {
+    margin-left: 10px;
+    color: #707a83;
+    font-size: 12px;
+}
