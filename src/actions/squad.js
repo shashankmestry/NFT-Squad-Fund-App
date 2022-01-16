@@ -1,8 +1,8 @@
-import spadService from "../services/squad.service";
+import squadService from "../services/squad.service";
 import { TRANSACTION_SUBMITTED } from "./types";
 
-export const createSquad = (address, name, tokenSymbol, target, minInvestment, maxInvestment, tokenTotalSupply, passKey) => (dispatch) => {
-    return spadService.createSPAD(address, name, tokenSymbol, target, minInvestment, maxInvestment, tokenTotalSupply, passKey).then(
+export const createSquad = (address, collectionAddress, target, name, purpose, fundSymbol, subFundCode, minInvestment, maxInvestment, tokenTotalSupply) => (dispatch) => {
+    return squadService.createSquad(address, collectionAddress, target, name, purpose, fundSymbol, subFundCode, minInvestment, maxInvestment, tokenTotalSupply).then(
         (response) => {
             let data = {
                 show: true,

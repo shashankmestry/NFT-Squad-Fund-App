@@ -69,12 +69,22 @@
       },
       {
         "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
         "name": "_purpose",
         "type": "string"
       },
       {
         "internalType": "string",
         "name": "_fundCode",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_subFundCode",
         "type": "string"
       },
       {

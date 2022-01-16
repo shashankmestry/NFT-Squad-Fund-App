@@ -13,7 +13,8 @@ class StartSquad extends Component {
             initiated: false,
             initiateLoading: false,
             name: "",
-            tokenSymbol: "",
+            collectionAddress: "",
+            fundSymbol: "",
             subFundCode: "",
             target: "",
             minInvestment: "",
@@ -50,7 +51,7 @@ class StartSquad extends Component {
             return;
         }
         
-        if(this.state.name === '' || this.state.tokenSymbol === '' || this.state.target === '' || this.state.minInvestment === '' || this.state.maxInvestment === '' || this.state.totalSupply === '') {
+        if(this.state.name === '' || this.state.tokenSymbol === '' || this.state.target === '' || this.state.minInvestment === '' || this.state.maxInvestment === '' || this.state.totalSupply === '' || this.state.collectionAddress === "") {
             this.setState({ errorMsg: "All fields are compulsory" });
             return;
         }
@@ -66,12 +67,11 @@ class StartSquad extends Component {
             this.setState({ errorMsg: "Pass key is required for private SPADs" });
             return;
         }
-        let _passKey = this.state.isPrivate ? this.state.passKey : "";
 
         this.setState({startSpadLoading: true});
 
         this.props.dispatch(
-            createSquad(this.props.metamask.address, this.state.name, this.state.tokenSymbol, this.state.target, this.state.minInvestment, this.state.maxInvestment, this.state.totalSupply, _passKey)
+            createSquad(this.props.metamask.address, this.state.collectionAddress, this.state.target, this.state.name, this.state.purpose, this.state.fundSymbol, this.state.subFundCode, this.state.minInvestment, this.state.maxInvestment, this.state.totalSupply)
         )
         .then((response) => {
             if(response !== 200) {
@@ -176,6 +176,12 @@ class StartSquad extends Component {
                                     NFT COLLECTION <br />
                                     (ONLY HOLDERS OF THIS NFT CAN CONTRIBUTE) 
                                 </Form.Label>
+                                <Form.Control type="text" placeholder="NFT Collection Address" 
+                                    id="collectionAddress"
+                                    value={this.state.collectionAddress}
+                                    onChange={this.handleChange}
+                                    className="mb-3"
+                                />
                                 <Form.Control type="text" placeholder="Name your Spad (10 characters)" 
                                     id="name"
                                     value={this.state.name}
@@ -185,7 +191,7 @@ class StartSquad extends Component {
                             <Form.Group className="mb-4">
                                 <Form.Label>FUND SYMBOL</Form.Label>
                                 <Form.Control type="text" placeholder="TOKEN SYMBOL (5 CHARACTERS MAX)" 
-                                    id="tokenSymbol"
+                                    id="fundSymbol"
                                     value={this.state.tokenSymbol}
                                     onChange={this.handleChange}
                                 />
@@ -245,7 +251,7 @@ class StartSquad extends Component {
                                     <Button className="rounded" disabled>
                                         CREATING NFT FUND <Spinner animation="border" size="sm" />
                                     </Button> :
-                                    <Button className="rounded" onClick={this.initiateSpadCreation}>CREATE NFT FUND</Button>
+                                    <Button className="rounded" onClick={this.handleCreateSpad}>CREATE NFT FUND</Button>
                                 }
                             </div>
                             <p className="text-danger">{this.state.errorMsg}</p>

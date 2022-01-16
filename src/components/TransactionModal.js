@@ -36,7 +36,7 @@ class TransactionModal extends Component {
                         <div>
                             <FontAwesomeIcon icon={faCheckCircle} style={{fontSize: "35px"}} className="text-success" />
                             <h3 className="mt-3">Your transaction has been sent...</h3>
-                            <p>See on etherscan: <a href={`https://ropsten.etherscan.io/tx/${transaction.message}`} rel="noreferrer" target="_blank"> here </a></p>
+                            <p>See on etherscan: <a href={`https://rinkeby.etherscan.io/tx/${transaction.message}`} rel="noreferrer" target="_blank"> here </a></p>
                         </div> :
                         <>
                         {

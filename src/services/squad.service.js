@@ -4,13 +4,13 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
 const contractSquadActionABI = require("../abis/squad-actions-abi.json");
-export const actionContractAddress = "0xA2294Ce83B81E86Ee765e3d9470B09dE69A6480d";
+export const actionContractAddress = "0xc577CA979B3893D1b28FF8e7cbAB158f72f1595d";
 export const squadActionsContract = new web3.eth.Contract(
     contractSquadActionABI, actionContractAddress
 );
 
 const contractSquadFactoryABI = require("../abis/squad-factory-abi.json");
-export const factoryContractAddress = "0xf84d637126365A42124092Ea1Cb55dE85Df054DE";
+export const factoryContractAddress = "0xA0c35A7f74f54023e853755834Eb036a1E71BAF1";
 export const squadFactoryContract = new web3.eth.Contract(
     contractSquadFactoryABI, factoryContractAddress
 );
@@ -29,7 +29,7 @@ class SquadService {
         );
     }
 
-    async createSquad(address, name, tokenSymbol, target, minInvestment, maxInvestment, tokenTotalSupply, passKey) {
+    async createSquad(address, collectionAddress, target, name, purpose, fundSymbol, subFundCode, minInvestment, maxInvestment, tokenTotalSupply) {
         if (!window.ethereum || address === null || address === "") {
             return {
                 status: "💡 Connect your Metamask wallet to create SPAD.",
@@ -40,7 +40,7 @@ class SquadService {
         const transactionParameters = {
             to: factoryContractAddress,
             from: address,
-            data: squadFactoryContract.methods.createSPAD(name, "", tokenSymbol, web3.utils.toWei(tokenTotalSupply, 'ether'), web3.utils.toWei(target, 'ether'),  web3.utils.toWei(minInvestment, 'ether'), web3.utils.toWei(maxInvestment, 'ether'), passKey).encodeABI(),
+            data: squadFactoryContract.methods.createSquad(collectionAddress, web3.utils.toWei(target, 'ether'), name, purpose, fundSymbol, subFundCode, web3.utils.toWei(tokenTotalSupply, 'ether'),   web3.utils.toWei(minInvestment, 'ether'), web3.utils.toWei(maxInvestment, 'ether')).encodeABI(),
         };
       
         try {
