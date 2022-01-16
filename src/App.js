@@ -10,6 +10,7 @@ import StartSquad from "./components/StartSquad";
 import TransactionModal from "./components/TransactionModal";
 import Notification from "./components/Notification";
 import Home from "./components/Home";
+import ViewSquads from "./components/ViewSquads";
 
 class App extends Component {
 
@@ -45,7 +46,7 @@ class App extends Component {
             <Notification /> 
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/view" element={<Home />} />
+              <Route exact path="/view" element={<ViewSquads />} />
               <Route exact path="/start" element={<StartSquad />} />
             </Routes >
           </Container>

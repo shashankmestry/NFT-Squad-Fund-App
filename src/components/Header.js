@@ -13,7 +13,7 @@ const Header = (props) => {
                 
                 <Nav id="main-menu" className="justify-content-center">
                     <NavLink to="/start" className="nav-link">Start</NavLink>
-                    <NavLink to="/view-funds" className="nav-link">View NFT Funds</NavLink>
+                    <NavLink to="/view" className="nav-link">View NFT Funds</NavLink>
                     <NavLink to="/contributions" className="nav-link">Your Contributions</NavLink>
                 </Nav>
                 <WalletConnect />
